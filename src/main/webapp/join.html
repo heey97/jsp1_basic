@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 작성자 : 노희영   -->
+
+<head>
+  <meta charset="UTF-8">
+  <title>NC Dinos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <ul>
+      <li id="img"><img src ="img-embelm-128@2x.png"></li>
+      <li id="main">
+        <h3>회원가입</h3>
+        <p>티켓예매, 포인트 등 다양한 혜택을 누리세요.</p>
+      </li>
+    </ul>
+    <div class="content">
+      <form action="welcome.html">
+        <ul>
+          <li>아이디(필수)</li>
+            <li>
+              <input type="text" name = "id" id="id" placeholder="아이디를 입력해 주세요" value="heeyoung3" maxlength="13"  title="아이디는 13자 이내 대소문자 및 숫자만 가능합니다." >
+              <button type ="button" id="chkBtn">중복 확인</button>
+            </li>
+          <li>비밀번호(필수)</li>          
+          <li>
+            <input type="number" name = "pwd" id="pwd" value="01234" maxlength="15" placeholder="비밀번호를 입력해주세요">
+          </li>
+          <li>비밀번호 확인(필수)</li>
+          <li>
+            <input type="number" name = "pwdChk" id="pwdChk" value="01234" maxlength="15" placeholder="비밀번호를 다시 한번 입력해 주세요.">
+          </li>
+          <li>이름(필수)</li>
+          <li>
+            <input type="text" name ="name" id="name" value="노희영" placeholder="이름">
+          </li>
+          <li>생년월일(필수)</li>
+          <li>
+            <input type="text" name = "birth" id="birth" value="1997-03-28" placeholder="년도4자리-월2자리-일2자리" maxlength="10">
+          </li>
+          <li>성별(필수)</li>
+            <li id="radioBtn">
+              <input type="radio" name="sex" id="male" value="male" style="cursor: pointer;" checked>
+              <label for="male" style="cursor: pointer;">남자</label>
+              <input type="radio" name="sex" id="female" value="female" style="cursor: pointer;">
+              <label for="female" style="cursor: pointer;">여자</label>
+            </li>
+          <li>전화번호(필수)</li>
+          <li>
+            <input type="text" name = "phoneNum" id="phoneNum" value="010-9142-5624" placeholder="연락처" maxlength="13">
+          </li>
+          <li>이메일</li>
+          <li>
+            <input type="text" name = "email" id="email" value="gmldud@koko.com" placeholder="이메일을 입력해 주세요.">
+          </li>
+          <li>주소</li>
+          <li>
+            <input type="text" name = "loc1" id="loc1" value="공수리636" placeholder="우편번호">
+            <button type ="button" id="selBtn">검색</button>
+          </li>
+          <li>
+            <input type="text" name = "loc2" id="loc2" value="배방읍 공수리" placeholder="주소">
+          </li>
+          <li>
+            <input type="text" name = "loc3" id="loc3" value="102동901호" placeholder="주소 검색 후 상세주소를 입력해 주세요">
+          </li>
+          <li>선호팀</li>
+          <li>
+            <select name="sel" id="dropBox">
+              <option>선택하세요.</option>
+              <option>NC 다이노스</option>
+              <option>LG 트윈스</option>
+              <option>SSG 랜더스</option>
+              <option>KIA 타이거즈</option>
+              <option>KT 위즈</option>
+              <option>삼성 라이온즈</option>
+              <option>롯데 자이언츠</option>
+              <option >한화 이글스</option>
+              <option >키움 히어로즈</option>
+              <option >두산 베어스</option>
+            </select>
+          </li>
+        </ul>
+        <button type="button" id="joinBtn" onclick="save()">회원가입</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

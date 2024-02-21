@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 작성자 : 노희영  */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 55rem;
+    margin: 2rem auto;
+}
+
+.content {
+    background-color: #eee;
+    padding: 5rem 2rem;
+}
+
+h3,
+p {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#img {
+    width: 50%;
+    margin: auto;
+}
+li{
+    width: 300%;
+}
+#selBtn,
+#chkBtn{
+    background-color: gray;
+    color: #eee;
+    font-weight: bold;
+}
+button{
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+}
+#radioBtn{
+    display: inline;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+li>input[type="number"],
+li>input[type="text"]{
+    width: 400px;
+    margin-bottom: 7px;
+    height: 50px;
+}
+
+#loc1,#id{
+    width: 295px;
+}
+ul{
+    width: auto;
+    margin: auto;
+}
+#joinBtn{
+    margin-top: 15px;
+    background-color: rgb(15, 15, 59);
+    color: #eee;
+    font-weight: bold;
+    width: 450px;
+}
+#dropBox{
+    width: 295px;
+    height: 50px;
+}
+#main{
+    width: 200px;
+    margin: auto;
+}
