@@ -32,10 +32,6 @@ const team = document.querySelector('#dropBox');
             alert('아이디 입력해주세요');
             id.focus();
             isValid = false;
-        }else if(!regex2.test(id.value)){
-            alert('아이디 입력해주세요');
-            id.focus();
-            isValid = false;
         }else if(pwd.value ==''){
             alert('비밀번호를 입력해주세요');
             pwd.focus();
@@ -108,7 +104,6 @@ const team = document.querySelector('#dropBox');
         }
         return str;
     }
-
     phoneNum.onkeyup = function(){
         var _val = this.value.trim();
         this.value = autoHypenPhone(_val) ;

@@ -19,8 +19,8 @@
 	// getParameter 메소드이므로 앞으로는 입력 요소를 파라미터라고 부르겠습니다.
 	
 	// input요소의 name 속성값을 인자로 합니다. 	
-	String id = request.getParameter("userid");			//아이디			
-	String password = request.getParameter("password");	//패스워드
+	String id = request.getParameter("id");			//아이디			
+	String password = request.getParameter("pwd");	//패스워드
 	out.print("<h3>아이디</h3>");
 	out.print(id);
 	out.print("<h3>비밀번호</h3>");

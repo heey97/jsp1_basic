@@ -19,7 +19,7 @@ public class TblCustomerDao {
     public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     public static final String URL = "jdbc:oracle:thin:@//localhost:1521/xe";
     public static final String USERNAME = "c##idev";
-    private static final String PASSWORD = "9999";
+    private static final String PASSWORD = "1234";
 
     private Connection getConnection() throws SQLException {
         Connection conn = null;
@@ -126,10 +126,9 @@ public class TblCustomerDao {
                         rs.getDate(5));
                 list.add(vo);
             }
-            System.out.println(list);
             // dao 메소드에는 특별한 목적이 아니면 출력문 작성안합니다 출력은 메인에서
         } catch (SQLException e) {
-            System.out.println("예외발생");
+            System.out.println("예외발생"+e.getMessage());
         }
         return list; // 자바객체 list와 매핑한 결과 list 를 리턴
     }
