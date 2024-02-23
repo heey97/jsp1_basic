@@ -5,10 +5,14 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @EqualsAndHashCode
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class BuyVo {
 	private int buyIdx;
 	private String customid;
@@ -16,19 +20,6 @@ public class BuyVo {
 	private int quantity;
 	private Date buyDate;
 	
-	public BuyVo(int buyIdx, String customid, String pcode, int quantity, Date buyDate) {
-		this.buyIdx = buyIdx;
-		this.customid = customid;
-		this.pcode = pcode;
-		this.quantity = quantity;
-		this.buyDate = buyDate;
-	}
-
-	@Override
-	public String toString() {
-		return buyIdx + ", " + customid + ", " + pcode + ", " + quantity
-				+ ", " + buyDate;
-	}
 }
 //필드값이 모두 값으면 equals 로 true 가 되도록 하고싶다.
 //-> equals 와 hashcode 를 재정의해야 합니다. (vo 객체)

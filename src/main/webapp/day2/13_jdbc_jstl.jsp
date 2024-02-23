@@ -70,10 +70,12 @@
 	List<CustomerVo> list = dao.allCustomers();
 		
 		pageContext.setAttribute("list",list);
+		list.get(1);
 		
 	%>
-	<div class="hhhh">
+	<div class="hhhh">+
 	<br>
+	<!-- el기호에서 지정된 이름 list 애트리뷰트를 가져오는 동작 : pageContext.getAttribute(list);실행하기 -->
 			<c:forEach items="${list }" var="vo" varStatus="status">
 	<fieldset>
 			<ul>
@@ -84,6 +86,7 @@
 				<li><c:out value="Email : ${vo.email}"/></li>
 				<li><c:out value="Age : ${vo.age}"/></li>
 				<li><fmt:formatDate value="${vo.reg_date}" pattern="yyyy-MM-dd a hh:mm:ss"/><li> 
+				
 			</ul>
 	</fieldset>
 	

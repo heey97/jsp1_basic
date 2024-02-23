@@ -5,13 +5,51 @@
 <title>JSP1-INDEX</title>
 </head>
 <body>
+<!-- html에서 url 지정하는 href 속성값이 /로 시작하면 컨텍스트 /jsp1이 사라집니다.
+	 href ="/customers.cc 일때는 http://localhost:8088/customers.cc가 됩니다. -->
+<hr>
+	<h3>TBL_고객 테이블의 데이터 조회/저장 서블릿 테스트(day3)</h3>
+	<div>
+		<ul>
+			<li>
+				<a href="customers.cc">고객 전체 조회</a>
+			</li>
+			<li>
+				<a href="products.cc">상품 전체 조회</a>
+			</li>
+			<li>
+				<a href="buys.cc">구매 내역 조회</a>
+			</li>
+		</ul>
+		<h4>POST 방식 요청</h4>
+		<p>
+		   POST 방식 요청은 form 을 이용해서 동작합니다. GET은 파라미터를 URL로 전달하지만
+		   POST 는 HTTP 프로토콜 메시지 body에 저장하여 요청을 보냅니다.
+		   POST 는 서버 데이터의 추가/수정/삭제 와 같은 변경 작업에 주로 사용됩니다.
+		   POST 는 파라미터 값 인코딩 해주지 않습니다.
+		</p>
+		<h5>고객 등록 화면, 고객 등록 입력값 저장 2개의 작업 필요.</h5>
+		<!-- 
+			방법 1) 1개의 서블릿에서 doGet, doPost를 구현하기
+			방법 2) 2개의 작업 각각 서블릿 만들기
+		-->
+		<ul>
+			<li>
+				<a href="register.cc">고객 등록</a><br>
+			</li>
+			<li>
+				<a href="productReg.cc">상품 등록</a>
+			</li>
+		</ul>
+	</div>
+<hr>
 	<ul>
 		<li><a href="first.cc">서블릿</a></li>
 		<li><a href="join.html">html</a></li>
 		<li><a href="day2/13_jdbc_jstl.jsp">jsp</a></li>
 	</ul>
-	
-	<!--1. url이 .html , .jsp, .aspx, .php 로 끝나면 파일 형식을 지정하는거에요 
+	<!--
+		1. url이 .html , .jsp, .aspx, .php 로 끝나면 파일 형식을 지정하는거에요 
 											ㄴ 특정 파일이 요청을 처리합니다.
 		2. .do, .tmall, .cc 로 끝나면 파일 형식이 아니고 임의의 확장자를 갖습니다
 											ㄴ 자바 클래스가 요청을 처리합니다.(서블릿)

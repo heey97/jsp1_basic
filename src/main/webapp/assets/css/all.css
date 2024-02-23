@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+ul {
+	list-style: none;
+	width: 50rem;
+	margin:auto;
+	padding-right:20rem;
+}
+
+ul .row {
+	display: flex;
+	width: 65rem;
+}
+
+ul .row > li {
+	padding: 0.5rem 0.02rem;
+	width: 20rem;
+	border-bottom: 1px dashed gray;
+	list-style: none;
+}
+
+.row > li:first-child {
+	width: 15rem;	
+}
+.row > li:nth-child(3) {
+	width: 25rem;
+}
+.row > li:last-child {
+	width: 10rem;
+}
+
+
+h3 {
+	text-align: center;
+}

@@ -11,15 +11,23 @@ import java.sql.Timestamp;
 
 import project.vo.BuyVo;
 import project.vo.CustomBuyVo;
+import project.vo.CustomerVo;
 
 public class TblBuyDao {
-    
-    public static final String URL ="jdbc:oracle:thin:@//localhost:1521/xe";
+    public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+    public static final String URL = "jdbc:oracle:thin:@//localhost:1521/xe";
     public static final String USERNAME = "c##idev";
     private static final String PASSWORD = "1234";
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        Connection conn = null;
+        try {
+            Class.forName(DRIVER);
+            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return conn;
     }
     //executeUpdate 메소드는 insert,update,delete 가 정상 실행되면(반영된 행이 있으면) 1을 리턴,
     //                       특히 update, delete 는 반영된 행이 없으면 0을 리턴한다.
@@ -145,4 +153,27 @@ public class TblBuyDao {
         }
         return list;
     }
+    public List<BuyVo> selAll() {
+        List<BuyVo> list = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM TBL_BUY";
+        try (Connection conn = getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                BuyVo vo = new BuyVo(rs.getInt(1),
+                						rs.getString(2),
+                						rs.getString(3),
+                						rs.getInt(4),
+                						rs.getTimestamp(5));
+                list.add(vo);
+            }
+            // dao 메소드에는 특별한 목적이 아니면 출력문 작성안합니다 출력은 메인에서
+        } catch (SQLException e) {
+            System.out.println("예외발생"+e.getMessage());
+        }
+        return list; // 자바객체 list와 매핑한 결과 list 를 리턴
+    }
+
  }
